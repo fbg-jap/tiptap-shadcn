@@ -50,6 +50,7 @@ const LinkToolbar = React.forwardRef<HTMLButtonElement, ButtonProps>(
 							<Button
 								variant="ghost"
 								size="sm"
+								type="button"
 								className={cn(
 									"h-8 w-max px-3 font-normal",
 									editor?.isActive("link") && "bg-accent",

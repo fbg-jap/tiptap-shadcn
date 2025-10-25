@@ -165,6 +165,7 @@ export const ColorHighlightToolbar = () => {
 							<Button
 								variant="ghost"
 								size="sm"
+								type="button"
 								style={{
 									color: currentColor,
 								}}
