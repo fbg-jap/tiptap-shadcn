@@ -61,6 +61,7 @@ export const HeadingsToolbar = React.forwardRef<
             <Button
               variant="ghost"
               size="sm"
+              type="button"
               className={cn(
                 "h-8 w-max gap-1 px-3 font-normal",
                 editor?.isActive("heading") && "bg-accent",

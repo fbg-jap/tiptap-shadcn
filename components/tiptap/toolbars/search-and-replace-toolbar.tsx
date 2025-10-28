@@ -70,6 +70,7 @@ export function SearchAndReplaceToolbar() {
 						<Button
 							variant="ghost"
 							size="sm"
+							type="button"
 							onClick={() => {
 								setOpen(!open);
 							}}
