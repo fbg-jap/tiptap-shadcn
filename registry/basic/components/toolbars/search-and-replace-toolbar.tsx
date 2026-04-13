@@ -31,11 +31,15 @@ export function SearchAndReplaceToolbar() {
 	const [searchText, setSearchText] = useState("");
 	const [replaceText, setReplaceText] = useState("");
 	const [checked, setChecked] = useState(false);
+	const searchStorage = editor?.storage as unknown as
+		| ({ searchAndReplace?: SearchAndReplaceStorage } & Record<string, unknown>)
+		| undefined;
 
-	const results = editor?.storage?.searchAndReplace
-		.results as SearchAndReplaceStorage["results"];
-	const selectedResult = editor?.storage?.searchAndReplace
-		.selectedResult as SearchAndReplaceStorage["selectedResult"];
+	const results =
+		searchStorage?.searchAndReplace?.results as SearchAndReplaceStorage["results"];
+	const selectedResult =
+		searchStorage?.searchAndReplace
+			?.selectedResult as SearchAndReplaceStorage["selectedResult"];
 
 	const replace = () => editor?.chain().replace().run();
 	const replaceAll = () => editor?.chain().replaceAll().run();
