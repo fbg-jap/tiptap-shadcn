@@ -254,13 +254,14 @@ export function TipTapFloatingMenu({ editor }: { editor: Editor }) {
           });
           break;
 
-        case "Enter":
+        case "Enter": {
           preventDefault();
           const targetIndex = selectedIndex === -1 ? 0 : selectedIndex;
           if (flatFilteredItems[targetIndex]) {
             executeCommand(flatFilteredItems[targetIndex].command);
           }
           break;
+        }
 
         case "Escape":
           preventDefault();
