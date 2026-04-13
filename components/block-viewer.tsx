@@ -143,7 +143,7 @@ function BlockViewerToolbar() {
         onValueChange={(value) => setView(value as "preview" | "code")}
         className="hidden lg:flex"
       >
-        <TabsList className="h-7 items-center rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)]">
+        <TabsList className="h-7 items-center rounded-md p-0 px-[calc(--spacing(1)-2px)] py-1">
           <TabsTrigger
             value="preview"
             className="h-[1.45rem] rounded-sm px-2 text-xs"
@@ -247,7 +247,7 @@ function BlockViewerView() {
         >
           <div className="h-full w-full">{item.component}</div>
         </ResizablePanel>
-        <ResizableHandle className="relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all after:hover:h-10 md:block" />
+        <ResizableHandle className="relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:-translate-x-px after:rounded-full after:bg-border after:transition-all hover:after:h-10 md:block" />
         <ResizablePanel defaultSize={0} minSize={0} />
       </ResizablePanelGroup>
     </div>
@@ -307,7 +307,7 @@ export function BlockViewerFileTree() {
   }
 
   return (
-    <SidebarProvider className="flex !min-h-full flex-col">
+    <SidebarProvider className="flex min-h-full! flex-col">
       <Sidebar
         collapsible="none"
         className="w-full flex-1 border-r border-zinc-700 bg-zinc-900 text-white"
@@ -344,7 +344,7 @@ function Tree({
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="whitespace-nowrap rounded-none pl-[--index] hover:bg-zinc-700 hover:text-white focus:bg-zinc-700 focus:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white"
+          className="whitespace-nowrap rounded-none pl-(--index) hover:bg-zinc-700 hover:text-white focus:bg-zinc-700 focus:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white"
           data-index={index}
           style={
             {
@@ -368,7 +368,7 @@ function Tree({
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="whitespace-nowrap rounded-none pl-[--index] hover:bg-zinc-700 hover:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white data-[state=open]:hover:bg-zinc-700 data-[state=open]:hover:text-white"
+            className="whitespace-nowrap rounded-none pl-(--index) hover:bg-zinc-700 hover:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white data-[state=open]:hover:bg-zinc-700 data-[state=open]:hover:text-white"
             style={
               {
                 "--index": `${index * (index === 1 ? 1 : 1.2)}rem`,
